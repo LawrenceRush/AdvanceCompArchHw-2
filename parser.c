@@ -112,11 +112,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "times") == 1){
 
+        result = times(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "timei") == 1){
+
+        result = timei(value2, value3);
 
         return result;
 
@@ -124,11 +128,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "div") == 1){
 
+        result = div(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "divi") == 1){
+
+        result = divi(value2, value3);
 
         return result;
 
@@ -136,11 +144,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "mod") == 1){
 
+        result = mod(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "modi") == 1){
+
+        result = modi(value2, value3);
 
         return result;
 
@@ -148,11 +160,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "div4") == 1){
 
+        result = plusi(value2);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "mult4") == 1){
+
+        result = plusi(value2);
 
         return result;
 
@@ -160,11 +176,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "equal") == 1){
 
+        result = equal(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "noteq") == 1){
+
+        result = noteq(value2, value3);
 
         return result;
 
@@ -172,11 +192,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "less") == 1){
 
+        result = less(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "great") == 1){
+
+        result = great(value2, value3);
 
         return result;
 
@@ -184,11 +208,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "isneg") == 1){
 
+        result = isneg(value2);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "ispos") == 1){
+
+        result = ispos(value2);
 
         return result;
 
@@ -196,11 +224,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "iseve") == 1){
 
+        result = iseve(value2);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "isodd") == 1){
+
+        result = isodd(value2);
 
         return result;
 
@@ -208,11 +240,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "exp") == 1){
 
+        result = exp(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "expi") == 1){
+
+        result = expi(value2, value3);
 
         return result;
 
@@ -220,17 +256,23 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "prim") == 1){
 
+        result = prim(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "set") == 1){
 
-        return value2;
+        result = value2;
+
+        return result; // simple enough to perform without a separate function
 
     }
 
     else if(strcmp(instruction, "neg") == 1){
+
+        result = neg(value2);
 
         return result;
 
@@ -238,11 +280,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "addao") == 1){
 
+        result = addao(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "addat") == 1){
+
+        result = addat(value2, value3);
 
         return result;
 
@@ -250,11 +296,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "copy") == 1){
 
-        return result;
+        result = value2;
+
+        return result;  // simple enough to perform without a separate function
 
     }
 
     else if(strcmp(instruction, "lessi") == 1){
+
+        result = lessi(value2, value3);
 
         return result;
 
@@ -262,11 +312,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "greti") == 1){
 
+        result = greti(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "minao") == 1){
+
+        result = minao(value2, value3);
 
         return result;
 
@@ -274,11 +328,13 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "clear") == 1){
 
-        return 0;
+        return 0; // simple enough to perform without a separate function
 
     }
 
     else if(strcmp(instruction, "fact") == 1){
+
+         result = fact(value2, value3);
 
         return result;
 
@@ -286,11 +342,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "facti") == 1){
 
+        result = facti(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "log") == 1){
+
+        result = log(value2, value3);
 
         return result;
 
@@ -298,11 +358,15 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "nlog") == 1){
 
+        result = nlog(value2, value3);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "fctol") == 1){
+
+        result = fctol(value2);
 
         return result;
 
@@ -310,17 +374,23 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "fctoi") == 1){
 
+        result = fctoi(value2);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "perm") == 1){
 
+        result = perm(value2);
+
         return result;
 
     }
 
     else if(strcmp(instruction, "permi") == 1){
+
+        result = permi(value2);
 
         return result;
 
