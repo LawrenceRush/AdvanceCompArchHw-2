@@ -69,9 +69,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
     //returned value, to be placed in first register listed
     int result;
 
-    //only used for swap function
-    //int result2;
-
+    // if/else ladder for each instruction
     if(strcmp(instruction, "plus") == 1){
 
         printf("Opcode: 000001");
@@ -130,6 +128,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else{
 
+
     }
 
 }
@@ -161,12 +160,17 @@ int find_instruction_type(char* instruction){
     }
 
     else{
-
+        printf("Error: invalid instruction. Destination register cleared.");
+        return 0;
     }
 
 }
 
-void integer_to_binary(int ){
+void integer_to_binary(int integer){
+    
+    char binary [32];
+
+    return binary;
 
 }
 
@@ -175,8 +179,7 @@ int main() {
 
     //declare array for registers
     int registerCount = 8;
-    int registers = registerCount - 1;
-    int regArray[registers];
+    int regArray[registerCount];
     int arguments[2];
 
     char* instruction;
@@ -194,69 +197,139 @@ int main() {
     char inputString[max_length];
 
     char exitCommand[4] = "exit";
+
+    printf("Current value of registers:\n", inputString);
+        for (int i = 0; i < registerCount; i++){
+            printf("%d, ", regArray[i]);
+        }
     
     while(1){
 
         //print current register status before each user input
-        printf("Current value of registers:\n", inputString);
-        for (int i = 0; i < registerCount; i++){
-            printf("%d, ", regArray[i]);
-        }
+
 
         //input
         printf("%s\n", inputString);
         scanf("%s", inputString);
-        //first token
 
+        //if exit command is typed, exit the program
         if (strcmp(inputString, exitCommand) == 1){
             exit(0);
         } 
 
+        //break up input string into smaller strings
         else{
             sscanf(inputString,"%s[^', '],%s[^', '],%s[^', '],%s", instruction, arg1, arg2, arg3);
         }
 
+        //parse first argument, which must always be a valid register
         value1 = find_reg(arg1);
 
-        if (value1 < 0 || value1 > registers){
+        if (value1 < 0 || value1 >= registerCount){
 
-            printf("The first argument must be a register between r0 and r%d.\n", registers);
+            printf("The first argument must be a register between r0 and r%d.\n", registerCount - 1);
             continue;
             
         } 
 
-    
+
+
+    //Prepare values for different instruction types. The atoi function is technically obsolete but should work for the purposes of this project.
+
         type = find_instruction_type(instruction);
 
-    // Prepare values for different instruction types
-
     //type 1: three registers
-        if (find_instruction_type(instruction)) == 1{
+
+        if (find_instruction_type(instruction) == 1){
 
             arguments[0] = regArray[value1];
 
+            value2 = find_reg(arg2);
+
+            if (value2 < 0 || value2 >= registerCount){
+
+                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                continue;
+            
+            } 
+
             arguments[1] = regArray[value2];
+
+            value3 = find_reg(arg3);
+
+            if (value3 < 0 || value3 >= registerCount){
+
+                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                continue;
+            
+            } 
 
             arguments[2] = regArray[value3];
 
         }
+        
     //type 2: 2 registers + 1 constant
-        else if(find_instruction_type(instruction)) == 2{
+
+        else if(find_instruction_type(instruction) == 2){
+
+            arguments[0] = regArray[value1];
+
+            value2 = find_reg(arg2);
+
+            if (value2 < 0 || value2 >= registerCount){
+
+                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                continue;
+            
+            } 
+
+            arguments[1] = regArray[value2];
+
+            arguments[2] = atoi(arg3);
 
         }
     //type 3: 1 register + 1 constant
-        else if(find_instruction_type(instruction)) == 3{
 
+        else if(find_instruction_type(instruction) == 3){
+
+            arguments[0] = regArray[value1];
+
+            arguments[1] = atoi(arg2);
+
+            arguments[2] = 0;//should not be used in this case
         }
     //type 4: 1 register + 2 constants
-        else if(find_instruction_type(instruction)) == 4{
+
+        else if(find_instruction_type(instruction) == 4){
+
+            arguments[0] = regArray[value1];
+
+            arguments[1] = atoi(arg2);
+
+            arguments[2] = atoi(arg3);
 
         }
     //type 5: 1 register + 1 register
 
-        else if(find_instruction_type(instruction)) == 5{
+        else if(find_instruction_type(instruction) == 5){
+
+            arguments[0] = regArray[value1];
+
+            value2 = find_reg(arg2);
+
+            if (value2 < 0 || value2 >= registerCount){
+
+                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                continue;
+            
+            } 
+
+            arguments[1] = regArray[value2];
+
+            arguments[2] = 0;//should not be used in this case
 
         }
+
     //unknown
         else{
 
@@ -265,11 +338,14 @@ int main() {
 
         }
 
-        
-
 
 
         regArray[value1] = call_instruction(instruction, arguments[0], arguments[1], arguments[2]);
+
+        printf("Current value of registers:\n", inputString);
+            for (int i = 0; i < registerCount; i++){
+            printf("%d, ", regArray[i]);
+            }
 
 
 
