@@ -72,63 +72,264 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
     // if/else ladder for each instruction
     if(strcmp(instruction, "plus") == 1){
 
-        printf("Opcode: 000001");
-        return plus(value2, value3);
+        result = plus(value2, value3);
+
+        return result;
 
     }
 
     else if(strcmp(instruction, "plusi") == 1){
 
-        printf("Opcode: 000010");
-        return plusi(value2, value3);
+        result = plusi(value2, value3);
+
+        return result;
 
     }
 
     else if(strcmp(instruction, "avg") == 1){
 
-        printf("Opcode: 000011");
-        return avg(value2, value3);
+        result = avg(value2, value3);
+
+        return result;
 
     }
 
     else if(strcmp(instruction, "minus") == 1){
 
-        printf("Opcode: 000100");
-        return minus(value2, value3);
+        result = minus(value2, value3);
+
+        return result;
 
     }
 
     else if(strcmp(instruction, "minui") == 1){
 
-        printf("Opcode: 000101");
-        return plusi(value2, value3);
+        result = plusi(value2, value3);
+
+        return result;
 
     }
 
     else if(strcmp(instruction, "times") == 1){
 
-        printf("Opcode: 000010");
         return result;
 
     }
 
     else if(strcmp(instruction, "timei") == 1){
 
-        printf("Opcode: 000010");
         return result;
 
     }
 
-    else if(strcmp(instruction, "timei") == 1){
+    else if(strcmp(instruction, "div") == 1){
 
-        printf("Opcode: 000010");
         return result;
 
     }
+
+    else if(strcmp(instruction, "divi") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "mod") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "modi") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "div4") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "mult4") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "equal") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "noteq") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "less") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "great") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "isneg") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "ispos") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "iseve") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "isodd") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "exp") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "expi") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "prim") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "set") == 1){
+
+        return value2;
+
+    }
+
+    else if(strcmp(instruction, "neg") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "addao") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "addat") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "copy") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "lessi") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "greti") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "minao") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "clear") == 1){
+
+        return 0;
+
+    }
+
+    else if(strcmp(instruction, "fact") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "facti") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "log") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "nlog") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "fctol") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "fctoi") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "perm") == 1){
+
+        return result;
+
+    }
+
+    else if(strcmp(instruction, "permi") == 1){
+
+        return result;
+
+    }
+
 
     else{
-
-
+        printf("Error: invalid instruction. Destination register cleared.");
+        return 0;
     }
 
 }
@@ -159,9 +360,244 @@ int find_instruction_type(char* instruction){
 
     }
 
+    else if(strcmp(instruction, "avg") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "minus") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "minui") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "times") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "timei") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "div") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "divi") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "mod") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "modi") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "div4") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "mult4") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "equal") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "noteq") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "less") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "great") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "isneg") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "ispos") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "iseve") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "isodd") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "exp") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "expi") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "prim") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "set") == 1){
+
+        return 3;
+
+    }
+
+    else if(strcmp(instruction, "neg") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "addao") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "addat") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "copy") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "lessi") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "greti") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "minao") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "clear") == 1){
+
+        return 3;
+
+    }
+
+    else if(strcmp(instruction, "fact") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "facti") == 1){
+
+        return 2;
+
+    }
+
+    else if(strcmp(instruction, "log") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "nlog") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "fctol") == 1){
+
+        return 5;
+
+    }
+
+    else if(strcmp(instruction, "fctoi") == 1){
+
+        return 3;
+
+    }
+
+    else if(strcmp(instruction, "perm") == 1){
+
+        return 1;
+
+    }
+
+    else if(strcmp(instruction, "permi") == 1){
+
+        return 2;
+
+    }
+
     else{
-        printf("Error: invalid instruction. Destination register cleared.");
-        return 0;
+
+        return -1; //unknown instruction
+
     }
 
 }
