@@ -30,7 +30,7 @@ int timei(int int1, int int2){
     return result;
 }
 
-int div(int int1, int int2){
+int divi(int int1, int int2){
     result = (int1 / int2);
     return result;
 }

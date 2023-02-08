@@ -3,6 +3,7 @@
 #include <stdlib.h>
 //#include "instructions1.h"
 //#include "instructions2.h"
+//#include "utils.h"
 #define max_length 24
 
 int find_reg(char* arg, char* reg_hex){
@@ -170,7 +171,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "div4") == 1){
 
-        result = plusi(value2);
+        result = div4(value2);
 
         return result;
 
@@ -178,7 +179,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "mult4") == 1){
 
-        result = plusi(value2);
+        result = mult4(value2);
 
         return result;
 
