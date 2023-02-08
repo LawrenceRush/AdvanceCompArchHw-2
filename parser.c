@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-//#include "instructions1.h"
+#include "instructions1.h"
 //#include "instructions2.h"
-//#include "utils.h"
+
 #define max_length 24
 
 int find_reg(char* arg, char* reg_hex){
@@ -13,63 +13,63 @@ int find_reg(char* arg, char* reg_hex){
     if(strcmp(arg, "r0") == 1){
 
         return 0;
-        reg_hex = "1";
+        strcpy(reg_hex, "1");
 
     }
 
     else if(strcmp(arg, "r1") == 1){
 
         return 1;
-        reg_hex = "2";
+        strcpy(reg_hex,"2");
 
     }
 
     else if(strcmp(arg, "r2") == 1){
 
         return 2;
-        reg_hex = "3";
+        strcpy(reg_hex, "3");
 
     }
 
     else if(strcmp(arg, "r3") == 1){
 
         return 3;
-        reg_hex = "4";
+        strcpy(reg_hex, "4");
 
     }
     
     else if(strcmp(arg, "r4") == 1){
 
         return 4;
-        reg_hex = "5";
+        strcpy(reg_hex, "5");
 
     }
     
     else if(strcmp(arg, "r5") == 1){
 
         return 5;
-        reg_hex = "6";
+        strcpy(reg_hex, "6");
 
     }
     
     else if(strcmp(arg, "r6") == 1){
 
         return 6;
-        reg_hex = "7";
+        strcpy(reg_hex, "7");
 
     }
 
     else if(strcmp(arg, "r7") == 1){
 
         return 7;
-        reg_hex = "8";
+        strcpy(reg_hex, "8");
 
     }
 
     else{
 
         return -1;
-        reg_hex = "0";
+        strcpy(reg_hex, "0");
 
     }
     
@@ -432,14 +432,15 @@ int find_instruction_type(char* instruction, char* instruction_hex){
     if(strcmp(instruction, "plus") == 1){
 
         return 1;
-        instruction_hex = "01";
+        
+        strcpy(instruction_hex, "01");
 
     }
 
     else if(strcmp(instruction, "plusi") == 1){
 
         return 1;
-        instruction_hex = "02";
+        strcpy(instruction_hex, "02");
         
 
     }
@@ -447,273 +448,273 @@ int find_instruction_type(char* instruction, char* instruction_hex){
     else if(strcmp(instruction, "avg") == 1){
 
         return 1;
-        instruction_hex = "03";
+        strcpy(instruction_hex, "03");
 
     }
 
     else if(strcmp(instruction, "minus") == 1){
 
         return 1;
-        instruction_hex = "04";
+        strcpy(instruction_hex, "04");
 
     }
 
     else if(strcmp(instruction, "minui") == 1){
 
         return 2;
-        instruction_hex = "05";
+        strcpy(instruction_hex, "05");
 
     }
 
     else if(strcmp(instruction, "times") == 1){
 
         return 1;
-        instruction_hex = "06";
+        strcpy(instruction_hex, "06");
 
     }
 
     else if(strcmp(instruction, "timei") == 1){
 
         return 2;
-        instruction_hex = "07";
+        strcpy(instruction_hex, "07");
 
     }
 
     else if(strcmp(instruction, "divd") == 1){
 
         return 1;
-        instruction_hex = "08";
+        strcpy(instruction_hex, "08");
 
     }
 
     else if(strcmp(instruction, "divi") == 1){
 
         return 2;
-        instruction_hex = "09";
+        strcpy(instruction_hex, "09");
 
     }
 
     else if(strcmp(instruction, "mod") == 1){
 
         return 1;
-        instruction_hex = "0A";
+        strcpy(instruction_hex, "0A");
 
     }
 
     else if(strcmp(instruction, "modi") == 1){
 
         return 2;
-        instruction_hex = "0B";
+        strcpy(instruction_hex, "0B");
 
     }
 
     else if(strcmp(instruction, "div4") == 1){
 
         return 5;
-        instruction_hex = "0C";
+        strcpy(instruction_hex, "0C");
 
     }
 
     else if(strcmp(instruction, "mult4") == 1){
 
         return 5;
-        instruction_hex = "0D";
+        strcpy(instruction_hex, "0D");
 
     }
 
     else if(strcmp(instruction, "equal") == 1){
 
         return 1;
-        instruction_hex = "0E";
+        strcpy(instruction_hex, "0E");
 
     }
 
     else if(strcmp(instruction, "noteq") == 1){
 
         return 1;
-        instruction_hex = "0F";
+        strcpy(instruction_hex, "0F");
 
     }
 
     else if(strcmp(instruction, "less") == 1){
 
         return 1;
-        instruction_hex = "10";
+        strcpy(instruction_hex, "10");
 
     }
 
     else if(strcmp(instruction, "great") == 1){
 
         return 1;
-        instruction_hex = "11";
+        strcpy(instruction_hex, "11");
 
     }
 
     else if(strcmp(instruction, "isneg") == 1){
 
         return 5;
-        instruction_hex = "12";
+        strcpy(instruction_hex, "12");
 
     }
 
     else if(strcmp(instruction, "ispos") == 1){
 
         return 5;
-        instruction_hex = "13";
+        strcpy(instruction_hex, "13");
 
     }
 
     else if(strcmp(instruction, "iseve") == 1){
 
         return 5;
-        instruction_hex = "14";
+        strcpy(instruction_hex, "14");
 
     }
 
     else if(strcmp(instruction, "isodd") == 1){
 
         return 5;
-        instruction_hex = "15";
+        strcpy(instruction_hex, "15");
 
     }
 
     else if(strcmp(instruction, "expn") == 1){
 
         return 1;
-        instruction_hex = "16";
+        strcpy(instruction_hex, "16");
 
     }
 
     else if(strcmp(instruction, "expi") == 1){
 
         return 2;
-        instruction_hex = "17";
+        strcpy(instruction_hex, "17");
 
     }
 
     else if(strcmp(instruction, "prim") == 1){
 
         return 1;
-        instruction_hex = "18";
+        strcpy(instruction_hex, "18");
 
     }
 
     else if(strcmp(instruction, "set") == 1){
 
         return 3;
-        instruction_hex = "19";
+        strcpy(instruction_hex, "19");
 
     }
 
     else if(strcmp(instruction, "neg") == 1){
 
         return 5;
-        instruction_hex = "1A";
+        strcpy(instruction_hex, "1A");
 
     }
 
     else if(strcmp(instruction, "addao") == 1){
 
         return 1;
-        instruction_hex = "1B";
+        strcpy(instruction_hex, "1B");
 
     }
 
     else if(strcmp(instruction, "addat") == 1){
 
         return 1;
-        instruction_hex = "1C";
+        strcpy(instruction_hex, "1C");
 
     }
 
     else if(strcmp(instruction, "copy") == 1){
 
         return 5;
-        instruction_hex = "1D";
+        strcpy(instruction_hex, "1D");
 
     }
 
     else if(strcmp(instruction, "lessi") == 1){
 
         return 2;
-        instruction_hex = "1E";
+        strcpy(instruction_hex, "1E");
 
     }
 
     else if(strcmp(instruction, "greti") == 1){
 
         return 2;
-        instruction_hex = "1F";
+        strcpy(instruction_hex, "1F");
 
     }
 
     else if(strcmp(instruction, "minao") == 1){
 
         return 1;
-        instruction_hex = "20";
+        strcpy(instruction_hex, "20");
 
     }
 
     else if(strcmp(instruction, "clear") == 1){
 
         return 3;
-        instruction_hex = "21";
+        strcpy(instruction_hex, "21");
 
     }
 
     else if(strcmp(instruction, "fact") == 1){
 
         return 1;
-        instruction_hex = "22";
+        strcpy(instruction_hex, "22");
 
     }
 
     else if(strcmp(instruction, "facti") == 1){
 
         return 2;
-        instruction_hex = "23";
+        strcpy(instruction_hex, "23");
 
     }
 
     else if(strcmp(instruction, "logr") == 1){
 
         return 1;
-        instruction_hex = "24";
+        strcpy(instruction_hex, "24");
 
     }
 
     else if(strcmp(instruction, "nlog") == 1){
 
         return 1;
-        instruction_hex = "25";
+        strcpy(instruction_hex, "25");
 
     }
 
     else if(strcmp(instruction, "fctol") == 1){
 
         return 5;
-        instruction_hex = "26";
+        strcpy(instruction_hex, "26");
 
     }
 
     else if(strcmp(instruction, "fctoi") == 1){
 
         return 3;
-        instruction_hex = "27";
+        strcpy(instruction_hex, "27");
 
     }
 
     else if(strcmp(instruction, "perm") == 1){
 
         return 3;
-        instruction_hex = "28";
+        strcpy(instruction_hex, "28");
 
     }
 
     else if(strcmp(instruction, "permi") == 1){
 
         return 3;
-        instruction_hex = "29";
+        strcpy(instruction_hex, "29");
 
     }
 
@@ -733,10 +734,10 @@ int main() {
     int regArray[8] = {1, 3, 5, 7, 9, 11, 13, 15};
     int arguments[2];
 
-    char* instruction;
-    char* arg1;
-    char* arg2;
-    char* arg3;
+    char instruction[6];
+    char arg1[4];
+    char arg2[4];
+    char arg3[4];
 
     int value1;
     int value2;
@@ -899,11 +900,11 @@ int main() {
         }
 
         //print hex instruction code
-        printf ("%s", instruction_code);
-        printf ("%s", reg1_code);
-        printf ("%s", reg2_code);
-        printf ("%s", reg3_code);
-        printf ("%s", const_code);
+        puts(instruction_code);
+        puts(reg1_code);
+        puts(reg2_code);
+        puts(reg3_code);
+        puts(const_code);
 
 
         regArray[value1] = call_instruction(instruction, arguments[0], arguments[1], arguments[2]);
