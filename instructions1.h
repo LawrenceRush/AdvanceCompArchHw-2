@@ -1,5 +1,5 @@
 
-
+int result;
 int plus(int int1, int int2){
     result = (int1 + int2);
     return result;
