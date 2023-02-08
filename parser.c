@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 //#include <instructions1.h>
-
+//#include <instructions2.h>
 #define max_length 24
 
 int find_reg(char* arg, char* reg_hex){
