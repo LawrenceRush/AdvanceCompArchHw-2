@@ -11,7 +11,7 @@ int equal(int firstReg, int secondReg);
 int noteq(int firstReg, int secondReg);
 
 
-int less(int firstReg, int secondReg);
+int mult4(int firstReg, int secondReg);
 
 
 int expo(int firstReg, int secondReg);

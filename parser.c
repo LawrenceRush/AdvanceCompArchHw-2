@@ -2,7 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "instructions1.h"
-//#include "instructions2.h"
+#include "instructions2.h"
+#include "utils.h"
 
 #define max_length 24
 
@@ -179,7 +180,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "mult4") == 1){
 
-        result = mult4(value2);
+        //result = mult4(value2);
 
         return result;
 
@@ -251,7 +252,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "expn") == 1){
 
-        result = expn(value2, value3);
+       // result = expn(value2, value3);
 
         return result;
 
@@ -267,7 +268,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "prim") == 1){
 
-        result = prim(value2, value3);
+       // result = prim(value2, value3);
 
         return result;
 
@@ -283,7 +284,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "neg") == 1){
 
-        result = neg(value2);
+        //result = neg(value2);
 
         return result;
 
@@ -291,7 +292,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "addao") == 1){
 
-        result = addao(value2, value3);
+        //result = addao(value2, value3);
 
         return result;
 
@@ -299,7 +300,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "addat") == 1){
 
-        result = addat(value2, value3);
+        //result = addat(value2, value3);
 
         return result;
 
@@ -315,7 +316,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "lessi") == 1){
 
-        result = lessi(value2, value3);
+       // result = lessi(value2, value3);
 
         return result;
 
@@ -345,7 +346,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "fact") == 1){
 
-         result = fact(value2, value3);
+       //  result = fact(value2, value3);
 
         return result;
 
@@ -353,7 +354,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "facti") == 1){
 
-        result = facti(value2, value3);
+       // result = facti(value2, value3);
 
         return result;
 
@@ -393,7 +394,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "perm") == 1){
 
-        result = perm(value2);
+        result = perm(value2, value3);
 
         return result;
 
@@ -401,7 +402,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "permi") == 1){
 
-        result = permi(value2);
+        result = permi(value2, value3);
 
         return result;
 
