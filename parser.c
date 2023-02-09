@@ -10,56 +10,56 @@ int find_reg(char* arg, char* reg_hex){
 
     int constant;
 
-    if(strcmp(arg, "r0") == 1){
+    if(strncmp(arg, "r0", 2) == 0){
 
         return 0;
         strcpy(reg_hex, "1");
 
     }
 
-    else if(strcmp(arg, "r1") == 1){
+    else if(strncmp(arg, "r1", 2) == 0){
 
         return 1;
         strcpy(reg_hex,"2");
 
     }
 
-    else if(strcmp(arg, "r2") == 1){
+    else if(strncmp(arg, "r2", 2) == 0){
 
         return 2;
         strcpy(reg_hex, "3");
 
     }
 
-    else if(strcmp(arg, "r3") == 1){
+    else if(strncmp(arg, "r3", 2) == 0){
 
         return 3;
         strcpy(reg_hex, "4");
 
     }
     
-    else if(strcmp(arg, "r4") == 1){
+    else if(strncmp(arg, "r4", 2) == 0){
 
         return 4;
         strcpy(reg_hex, "5");
 
     }
     
-    else if(strcmp(arg, "r5") == 1){
+    else if(strncmp(arg, "r5", 2) == 0){
 
         return 5;
         strcpy(reg_hex, "6");
 
     }
     
-    else if(strcmp(arg, "r6") == 1){
+    else if(strncmp(arg, "r6", 2) == 0){
 
         return 6;
         strcpy(reg_hex, "7");
 
     }
 
-    else if(strcmp(arg, "r7") == 1){
+    else if(strncmp(arg, "r7", 2) == 0){
 
         return 7;
         strcpy(reg_hex, "8");
@@ -81,7 +81,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
     int result;
 
     // if/else ladder for each instruction
-    if(strcmp(instruction, "plus") == 1){
+    if(strcmp(instruction, "plus") == 01){
 
         result = plus(value2, value3);
 
@@ -89,7 +89,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "plusi") == 1){
+    else if(strcmp(instruction, "plusi") == 0){
 
         result = plusi(value2, value3);
 
@@ -97,7 +97,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "avg") == 1){
+    else if(strcmp(instruction, "avg") == 0){
 
         result = avg(value2, value3);
 
@@ -105,7 +105,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "minus") == 1){
+    else if(strcmp(instruction, "minus") == 0){
 
         result = minus(value2, value3);
 
@@ -113,7 +113,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "minui") == 1){
+    else if(strcmp(instruction, "minui") == 0){
 
         result = plusi(value2, value3);
 
@@ -121,7 +121,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "times") == 1){
+    else if(strcmp(instruction, "times") == 0){
 
         result = times(value2, value3);
 
@@ -129,7 +129,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "timei") == 1){
+    else if(strcmp(instruction, "timei") == 0){
 
         result = timei(value2, value3);
 
@@ -137,7 +137,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "divd") == 1){
+    else if(strcmp(instruction, "divd") == 0){
 
         result = divd(value2, value3);
 
@@ -145,7 +145,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "divi") == 1){
+    else if(strcmp(instruction, "divi") == 0){
 
         result = divi(value2, value3);
 
@@ -153,7 +153,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "mod") == 1){
+    else if(strcmp(instruction, "mod") == 0){
 
         result = mod(value2, value3);
 
@@ -161,7 +161,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "modi") == 1){
+    else if(strcmp(instruction, "modi") == 0){
 
         result = modi(value2, value3);
 
@@ -169,7 +169,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "div4") == 1){
+    /*else if(strcmp(instruction, "div4") == 0){
 
         result = div4(value2);
 
@@ -177,7 +177,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "mult4") == 1){
+    else if(strcmp(instruction, "mult4") == 0){
 
         result = mult4(value2);
 
@@ -185,7 +185,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "equal") == 1){
+    else if(strcmp(instruction, "equal") == 0){
 
         result = equal(value2, value3);
 
@@ -193,7 +193,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "noteq") == 1){
+    else if(strcmp(instruction, "noteq") == 0){
 
         result = noteq(value2, value3);
 
@@ -201,7 +201,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "less") == 1){
+    else if(strcmp(instruction, "less") == 0){
 
         result = less(value2, value3);
 
@@ -209,7 +209,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "great") == 1){
+    else if(strcmp(instruction, "great") == 0){
 
         result = great(value2, value3);
 
@@ -217,7 +217,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "isneg") == 1){
+    else if(strcmp(instruction, "isneg") == 0){
 
         result = isneg(value2);
 
@@ -225,7 +225,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "ispos") == 1){
+    else if(strcmp(instruction, "ispos") == 0){
 
         result = ispos(value2);
 
@@ -233,7 +233,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "iseve") == 1){
+    else if(strcmp(instruction, "iseve") == 0){
 
         result = iseve(value2);
 
@@ -241,7 +241,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "isodd") == 1){
+    else if(strcmp(instruction, "isodd") == 0){
 
         result = isodd(value2);
 
@@ -249,7 +249,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "expn") == 1){
+    else if(strcmp(instruction, "expn") == 0){
 
         result = expn(value2, value3);
 
@@ -257,7 +257,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "expi") == 1){
+    else if(strcmp(instruction, "expi") == 0){
 
         result = expi(value2, value3);
 
@@ -265,7 +265,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "prim") == 1){
+    else if(strcmp(instruction, "prim") == 0){
 
         result = prim(value2, value3);
 
@@ -273,7 +273,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "set") == 1){
+    else if(strcmp(instruction, "set") == 0){
 
         result = value2;
 
@@ -281,7 +281,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "neg") == 1){
+    else if(strcmp(instruction, "neg") == 0){
 
         result = neg(value2);
 
@@ -289,7 +289,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "addao") == 1){
+    else if(strcmp(instruction, "addao") == 0){
 
         result = addao(value2, value3);
 
@@ -297,7 +297,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "addat") == 1){
+    else if(strcmp(instruction, "addat") == 0){
 
         result = addat(value2, value3);
 
@@ -305,7 +305,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "copy") == 1){
+    else if(strcmp(instruction, "copy") == 0){
 
         result = value2;
 
@@ -313,7 +313,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "lessi") == 1){
+    else if(strcmp(instruction, "lessi") == 0){
 
         result = lessi(value2, value3);
 
@@ -321,7 +321,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "greti") == 1){
+    else if(strcmp(instruction, "greti") == 0){
 
         result = greti(value2, value3);
 
@@ -329,7 +329,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "minao") == 1){
+    else if(strcmp(instruction, "minao") == 0){
 
         result = minao(value2, value3);
 
@@ -337,13 +337,13 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "clear") == 1){
+    else if(strcmp(instruction, "clear") == 0){
 
         return 0; // simple enough to perform without a separate function
 
     }
 
-    else if(strcmp(instruction, "fact") == 1){
+    else if(strcmp(instruction, "fact") == 0){
 
          result = fact(value2, value3);
 
@@ -351,7 +351,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "facti") == 1){
+    else if(strcmp(instruction, "facti") == 0){
 
         result = facti(value2, value3);
 
@@ -359,7 +359,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "logr") == 1){
+    else if(strcmp(instruction, "logr") == 0){
 
         result = logr(value2, value3);
 
@@ -367,7 +367,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "nlog") == 1){
+    else if(strcmp(instruction, "nlog") == 0){
 
         result = nlog(value2, value3);
 
@@ -375,7 +375,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "fctol") == 1){
+    else if(strcmp(instruction, "fctol") == 0){
 
         result = fctol(value2);
 
@@ -383,7 +383,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "fctoi") == 1){
+    else if(strcmp(instruction, "fctoi") == 0){
 
         result = fctoi(value2);
 
@@ -391,7 +391,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "perm") == 1){
+    else if(strcmp(instruction, "perm") == 0){
 
         result = perm(value2);
 
@@ -399,13 +399,13 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "permi") == 1){
+    else if(strcmp(instruction, "permi") == 0){
 
         result = permi(value2);
 
         return result;
 
-    }
+    }*/
 
 
     else{
@@ -429,7 +429,7 @@ int find_instruction_type(char* instruction, char* instruction_hex){
     */
 
 
-    if(strcmp(instruction, "plus") == 1){
+    if(strcmp(instruction, "plus") == 0){
 
         return 1;
         
@@ -437,7 +437,7 @@ int find_instruction_type(char* instruction, char* instruction_hex){
 
     }
 
-    else if(strcmp(instruction, "plusi") == 1){
+    else if(strcmp(instruction, "plusi") == 0){
 
         return 1;
         strcpy(instruction_hex, "02");
@@ -445,278 +445,278 @@ int find_instruction_type(char* instruction, char* instruction_hex){
 
     }
 
-    else if(strcmp(instruction, "avg") == 1){
+    else if(strcmp(instruction, "avg") == 0){
 
         return 1;
         strcpy(instruction_hex, "03");
 
     }
 
-    else if(strcmp(instruction, "minus") == 1){
+    else if(strcmp(instruction, "minus") == 0){
 
         return 1;
         strcpy(instruction_hex, "04");
 
     }
 
-    else if(strcmp(instruction, "minui") == 1){
+    else if(strcmp(instruction, "minui") == 0){
 
         return 2;
         strcpy(instruction_hex, "05");
 
     }
 
-    else if(strcmp(instruction, "times") == 1){
+    else if(strcmp(instruction, "times") == 0){
 
         return 1;
         strcpy(instruction_hex, "06");
 
     }
 
-    else if(strcmp(instruction, "timei") == 1){
+    else if(strcmp(instruction, "timei") == 0){
 
         return 2;
         strcpy(instruction_hex, "07");
 
     }
 
-    else if(strcmp(instruction, "divd") == 1){
+    else if(strcmp(instruction, "divd") == 0){
 
         return 1;
         strcpy(instruction_hex, "08");
 
     }
 
-    else if(strcmp(instruction, "divi") == 1){
+    else if(strcmp(instruction, "divi") == 0){
 
         return 2;
         strcpy(instruction_hex, "09");
 
     }
 
-    else if(strcmp(instruction, "mod") == 1){
+    else if(strcmp(instruction, "mod") == 0){
 
         return 1;
         strcpy(instruction_hex, "0A");
 
     }
 
-    else if(strcmp(instruction, "modi") == 1){
+    else if(strcmp(instruction, "modi") == 0){
 
         return 2;
         strcpy(instruction_hex, "0B");
 
     }
 
-    else if(strcmp(instruction, "div4") == 1){
+    /*else if(strcmp(instruction, "div4") == 0){
 
         return 5;
         strcpy(instruction_hex, "0C");
 
     }
 
-    else if(strcmp(instruction, "mult4") == 1){
+    else if(strcmp(instruction, "mult4") == 0){
 
         return 5;
         strcpy(instruction_hex, "0D");
 
     }
 
-    else if(strcmp(instruction, "equal") == 1){
+    else if(strcmp(instruction, "equal") == 0){
 
         return 1;
         strcpy(instruction_hex, "0E");
 
     }
 
-    else if(strcmp(instruction, "noteq") == 1){
+    else if(strcmp(instruction, "noteq") == 0){
 
         return 1;
         strcpy(instruction_hex, "0F");
 
     }
 
-    else if(strcmp(instruction, "less") == 1){
+    else if(strcmp(instruction, "less") == 0){
 
         return 1;
         strcpy(instruction_hex, "10");
 
     }
 
-    else if(strcmp(instruction, "great") == 1){
+    else if(strcmp(instruction, "great") == 0){
 
         return 1;
         strcpy(instruction_hex, "11");
 
     }
 
-    else if(strcmp(instruction, "isneg") == 1){
+    else if(strcmp(instruction, "isneg") == 0){
 
         return 5;
         strcpy(instruction_hex, "12");
 
     }
 
-    else if(strcmp(instruction, "ispos") == 1){
+    else if(strcmp(instruction, "ispos") == 0){
 
         return 5;
         strcpy(instruction_hex, "13");
 
     }
 
-    else if(strcmp(instruction, "iseve") == 1){
+    else if(strcmp(instruction, "iseve") == 0){
 
         return 5;
         strcpy(instruction_hex, "14");
 
     }
 
-    else if(strcmp(instruction, "isodd") == 1){
+    else if(strcmp(instruction, "isodd") == 0){
 
         return 5;
         strcpy(instruction_hex, "15");
 
     }
 
-    else if(strcmp(instruction, "expn") == 1){
+    else if(strcmp(instruction, "expn") == 0){
 
         return 1;
         strcpy(instruction_hex, "16");
 
     }
 
-    else if(strcmp(instruction, "expi") == 1){
+    else if(strcmp(instruction, "expi") == 0){
 
         return 2;
         strcpy(instruction_hex, "17");
 
     }
 
-    else if(strcmp(instruction, "prim") == 1){
+    else if(strcmp(instruction, "prim") == 0){
 
         return 1;
         strcpy(instruction_hex, "18");
 
     }
 
-    else if(strcmp(instruction, "set") == 1){
+    else if(strcmp(instruction, "set") == 0){
 
         return 3;
         strcpy(instruction_hex, "19");
 
     }
 
-    else if(strcmp(instruction, "neg") == 1){
+    else if(strcmp(instruction, "neg") == 0){
 
         return 5;
         strcpy(instruction_hex, "1A");
 
     }
 
-    else if(strcmp(instruction, "addao") == 1){
+    else if(strcmp(instruction, "addao") == 0){
 
         return 1;
         strcpy(instruction_hex, "1B");
 
     }
 
-    else if(strcmp(instruction, "addat") == 1){
+    else if(strcmp(instruction, "addat") == 0){
 
         return 1;
         strcpy(instruction_hex, "1C");
 
     }
 
-    else if(strcmp(instruction, "copy") == 1){
+    else if(strcmp(instruction, "copy") == 0){
 
         return 5;
         strcpy(instruction_hex, "1D");
 
     }
 
-    else if(strcmp(instruction, "lessi") == 1){
+    else if(strcmp(instruction, "lessi") == 0){
 
         return 2;
         strcpy(instruction_hex, "1E");
 
     }
 
-    else if(strcmp(instruction, "greti") == 1){
+    else if(strcmp(instruction, "greti") == 0){
 
         return 2;
         strcpy(instruction_hex, "1F");
 
     }
 
-    else if(strcmp(instruction, "minao") == 1){
+    else if(strcmp(instruction, "minao") == 0){
 
         return 1;
         strcpy(instruction_hex, "20");
 
     }
 
-    else if(strcmp(instruction, "clear") == 1){
+    else if(strcmp(instruction, "clear") == 0){
 
         return 3;
         strcpy(instruction_hex, "21");
 
     }
 
-    else if(strcmp(instruction, "fact") == 1){
+    else if(strcmp(instruction, "fact") == 0){
 
         return 1;
         strcpy(instruction_hex, "22");
 
     }
 
-    else if(strcmp(instruction, "facti") == 1){
+    else if(strcmp(instruction, "facti") == 0){
 
         return 2;
         strcpy(instruction_hex, "23");
 
     }
 
-    else if(strcmp(instruction, "logr") == 1){
+    else if(strcmp(instruction, "logr") == 0){
 
         return 1;
         strcpy(instruction_hex, "24");
 
     }
 
-    else if(strcmp(instruction, "nlog") == 1){
+    else if(strcmp(instruction, "nlog") == 0){
 
         return 1;
         strcpy(instruction_hex, "25");
 
     }
 
-    else if(strcmp(instruction, "fctol") == 1){
+    else if(strcmp(instruction, "fctol") == 0){
 
         return 5;
         strcpy(instruction_hex, "26");
 
     }
 
-    else if(strcmp(instruction, "fctoi") == 1){
+    else if(strcmp(instruction, "fctoi") == 0){
 
         return 3;
         strcpy(instruction_hex, "27");
 
     }
 
-    else if(strcmp(instruction, "perm") == 1){
+    else if(strcmp(instruction, "perm") == 0){
 
         return 3;
         strcpy(instruction_hex, "28");
 
     }
 
-    else if(strcmp(instruction, "permi") == 1){
+    else if(strcmp(instruction, "permi") == 0){
 
         return 3;
         strcpy(instruction_hex, "29");
 
-    }
+    }*/
 
     else{
 
@@ -745,6 +745,8 @@ int main() {
 
     int type;
 
+    char* delim = " ";
+
     char instruction_code[2];
     char reg1_code[1];
     char reg2_code[1];
@@ -754,9 +756,7 @@ int main() {
     //declare input string
     char inputString[max_length];
 
-    char exitCommand[4] = "exit";
-
-    printf("Current value of registers:\n", inputString);
+    printf("Current value of registers:\n");
         for (int i = 0; i < registerCount; i++){
             printf("r%d:", i);
             printf("%d, ", regArray[i]);
@@ -764,22 +764,48 @@ int main() {
     
     while(1){
 
-        //print current register status before each user input
-
 
         //input
         printf("%s\n", inputString);
         scanf("%s", inputString);
 
         //if exit command is typed, exit the program
-        if (strcmp(inputString, exitCommand) == 1){
-            exit(0);
+        if (strncmp(inputString, "exit", 4) == 0){
+            break;
         } 
 
         //break up input string into smaller strings
-        else{
-            sscanf(inputString,"%s[^', '],%s[^', '],%s[^', '],%s", instruction, arg1, arg2, arg3);
+        for(i = 0; i < 4; i++){
+
+        token = strtok(inputString, delim);
+        
+            if(){
+
+            }
+            else if(){
+
+            }
+            else if(){
+                
+            }
+            else if(){
+                
+            }
+            else{
+
+            }
         }
+
+        else{
+            sscanf(inputString,"%s %s %s %s", instruction, arg1, arg2, arg3);
+        }
+
+        puts(instruction);
+        puts(arg1);
+        puts(arg2);
+        puts(arg3);
+
+
 
         //parse first argument, which must always be a valid register
         value1 = find_reg(arg1, reg1_code);
@@ -909,12 +935,11 @@ int main() {
 
         regArray[value1] = call_instruction(instruction, arguments[0], arguments[1], arguments[2]);
 
+        //print register values after each output
         printf("Current value of registers:\n", inputString);
             for (int i = 0; i < registerCount; i++){
             printf("%d, ", regArray[i]);
             }
-
-
 
     }
 
