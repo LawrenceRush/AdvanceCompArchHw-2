@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "instructions1.h"
-//#include "instructions2.h"
+#include "instructions2.h"
 
 #define max_length 24
 
@@ -200,7 +200,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
         return result;
 
     }
-
+ */
     else if(strcmp(instruction, "less") == 0){
 
         result = less(value2, value3);
@@ -248,7 +248,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
         return result;
 
     }
-
+/*
     else if(strcmp(instruction, "expn") == 0){
 
         result = expn(value2, value3);
@@ -272,7 +272,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
         return result;
 
     }
-
+*/
     else if(strcmp(instruction, "set") == 0){
 
         result = value2;
@@ -280,7 +280,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
         return result; // simple enough to perform without a separate function
 
     }
-
+/*
     else if(strcmp(instruction, "neg") == 0){
 
         result = neg(value2);
@@ -358,10 +358,10 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
         return result;
 
     }
-
+    */
     else if(strcmp(instruction, "logr") == 0){
 
-        result = logr(value2, value3);
+        result = logr(value2);
 
         return result;
 
@@ -369,7 +369,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "nlog") == 0){
 
-        result = nlog(value2, value3);
+        result = nlog(value2);
 
         return result;
 
@@ -390,7 +390,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
         return result;
 
     }
-
+/*
     else if(strcmp(instruction, "perm") == 0){
 
         result = perm(value2);
@@ -535,7 +535,7 @@ int find_instruction_type(char* instruction, char* instruction_hex){
         strcpy(instruction_hex, "0F");
 
     }
-
+*/
     else if(strcmp(instruction, "less") == 0){
 
         return 1;
@@ -577,7 +577,7 @@ int find_instruction_type(char* instruction, char* instruction_hex){
         strcpy(instruction_hex, "15");
 
     }
-
+/*
     else if(strcmp(instruction, "expn") == 0){
 
         return 1;
@@ -598,14 +598,14 @@ int find_instruction_type(char* instruction, char* instruction_hex){
         strcpy(instruction_hex, "18");
 
     }
-
+*/
     else if(strcmp(instruction, "set") == 0){
 
         return 3;
         strcpy(instruction_hex, "19");
 
     }
-
+/*
     else if(strcmp(instruction, "neg") == 0){
 
         return 5;
@@ -675,17 +675,17 @@ int find_instruction_type(char* instruction, char* instruction_hex){
         strcpy(instruction_hex, "23");
 
     }
-
+*/
     else if(strcmp(instruction, "logr") == 0){
 
-        return 1;
+        return 5;
         strcpy(instruction_hex, "24");
 
     }
 
     else if(strcmp(instruction, "nlog") == 0){
 
-        return 1;
+        return 3;
         strcpy(instruction_hex, "25");
 
     }
@@ -703,7 +703,8 @@ int find_instruction_type(char* instruction, char* instruction_hex){
         strcpy(instruction_hex, "27");
 
     }
-
+	
+/*
     else if(strcmp(instruction, "perm") == 0){
 
         return 3;

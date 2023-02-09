@@ -1,27 +1,19 @@
 // instructions for log10, loge, factorial integer, factorial register , isodd , iseven,ispositive, isnegative,great (return 1 if value1>value2 , less (return 1 if value1< value2)
 //#include <stdio.h>
-//#include <math.h>
-int logr(int y,int x) {
-    int result = 0;
-    while (x >= 10) {
+#include <math.h>
+int logr(int x) {
+//	printf("\n%f\n",log10((double) x));
+   int result = 0;
+     while (x >= 10) {
         x /= 10;
         result += 1;
     }
-    return result;
+	    return result;
 }
-int nlog(int y ,int x) {
-    int result = 0;
-    double term = (x - 1) / (x + 1);
-    double denominator = 3;
-    double fraction = term;
-    while (fraction >= 0.0001 || fraction <= -0.0001) {
-        result += fraction;
-        term *= ((x - 1) / (x + 1)) * ((x - 1) / (x + 1));
-        denominator += 2;
-        fraction = term / denominator;
-    }
-    result *= 2;
-    return result;
+int nlog(int x) {
+    double result = log((double)x);
+	//printf("\n%f\n",result);
+	  return result;
 }
 int fctoi(int n) {
     int result = 1;
@@ -35,12 +27,14 @@ int fctol(int reg){
 	for (int i = 2; i <= reg; i++) {
         result *= i;
     }
-    return result;
+	    return result;
 }
 int isodd(int n) {
-    if (n % 2) {
-        return 1;
-    }
+    if (n % 2 == 0) {
+        return 0;
+    } else {
+		return 1;
+	}
 }
 int iseve(int n) {
     if (n % 2 == 0) {
