@@ -10,6 +10,12 @@ int plusi(int int1, int int2){
     return result;
 }
 
+int avg(int int1, int int2){
+    int result = (int1 + int2);
+    result = result / 2;
+    return result;
+}
+
 int minus(int int1, int int2){
     int result = (int1 - int2);
     return result;
