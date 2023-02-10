@@ -895,8 +895,8 @@ int main() {
             arguments[0] = regArray[value1];
 
             value2 = find_reg(arg2, reg2_code);
-             printf("arg2 914: %s \n", arg2);
-            printf("Value 914: %d \n", value2);
+          //   printf("arg2 914: %s \n", arg2);
+        //    printf("Value 914: %d \n", value2);
             if (value2 < 0 || value2 >= registerCount){
 
                 printf("Invalid second register for type 5. Available registers range from r0 to r%d.\n", registerCount - 1);
