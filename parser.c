@@ -372,7 +372,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "logr") == 0){
 
-        result = logr(value2, value3);
+        result = logr(value2);
 
         return result;
 
@@ -380,7 +380,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "nlog") == 0){
 
-        result = nlog(value2, value3);
+        result = nlog(value2);
 
         return result;
 
@@ -690,14 +690,14 @@ int find_instruction_type(char* instruction, char* instruction_hex){
 
     else if(strcmp(instruction, "logr") == 0){
         strcpy(instruction_hex, "24");
-        return 1;
+        return 5;
         
 
     }
 
     else if(strcmp(instruction, "nlog") == 0){
         strcpy(instruction_hex, "25");
-        return 1;
+        return 5;
         
 
     }
@@ -920,13 +920,15 @@ int main() {
         
         //print hex instruction code
         
-        printf("This is the instruction code: %s\n", instruction_code);
-        printf("This is the reg1_code: %s\n", reg1_code);
-        printf("This is the reg2_code: %s\n", reg2_code);
-        printf("This is the reg3_code: %s\n", reg3_code);
-        printf("This is the const_code: %s\n", const_code);
+    //    printf("This is the instruction code: %s\n", instruction_code);
+   //     printf("This is the reg1_code: %s\n", reg1_code);
+   //     printf("This is the reg2_code: %s\n", reg2_code);
+   //     printf("This is the reg3_code: %s\n", reg3_code);
+    //    printf("This is the const_code: %s\n", const_code);
         
-        
+      printf("%-20s | %-10s | %-10s | %-10s | %-10s\n", "Instruction Code", "Reg1 Code", "Reg2 Code", "Reg3 Code", "Const Code");
+    printf("--------------------------------------------------------------------------------------------------------------\n");
+    printf("%-20s | %-10s | %-10s | %-10s | %-10s\n", instruction_code, reg1_code, reg2_code, reg3_code, const_code);
         
 
         if(find_instruction_type(instruction, instruction_code) == 2){
