@@ -870,8 +870,8 @@ int main() {
             arguments[1] = atoi(arg2);
 
             sprintf(const_code, "%x", arguments[1]);
-			printf(reg2_code, "%s", arguments[2]);
-			printf(reg3_code, "%s", arguments[3]);
+			sprintf(reg2_code, "%x", arguments[2]);
+			sprintf(reg3_code, "%x", arguments[3]);
             arguments[2] = 0;//should not be used in this case
         }
 
