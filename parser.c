@@ -4,6 +4,7 @@
 #include "instructions1.h"
 #include "instructions2.h"
 #include "instructions3.h"
+#include "instructions4.h"
 
 #define max_length 24
 
@@ -92,6 +93,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
     int result;
 
     // if/else ladder for each instruction
+
     if(strcmp(instruction, "plus") == 0){
 
         result = plus(value2, value3);
@@ -294,7 +296,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "neg") == 0){
 
-        //result = neg(value2);
+        result = neg(value2);
 
         return result;
 
@@ -302,7 +304,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "addao") == 0){
 
-        //result = addao(value2, value3);
+        result = addao(value2, value3);
 
         return result;
 
@@ -310,7 +312,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "addat") == 0){
 
-        //result = addat(value2, value3);
+        result = addat(value2, value3);
 
         return result;
 
@@ -326,7 +328,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "lessi") == 0){
 
-       // result = lessi(value2, value3);
+       result = lessi(value2, value3);
 
         return result;
 
@@ -334,7 +336,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "greti") == 0){
 
-        //result = greti(value2, value3);
+        result = greti(value2, value3);
 
         return result;
 
@@ -356,17 +358,16 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "fact") == 0){
 
-       //  result = fact(value2, value3);
+       result = fact(value2, value3);
 
-        return result;
+       return result;
 
     }
 
     else if(strcmp(instruction, "facti") == 0){
 
-       // result = facti(value2, value3);
-
-        return result;
+       result = facti(value2, value3);
+       return result;
 
     }
 
@@ -806,6 +807,7 @@ int main() {
         }
         */
         fgets(buffer, 100, stdin);
+
         sscanf(buffer, "%[^,], %[^,\n], %[^,\n], %[^,\n]", instruction, arg1, arg2, arg3);
 
 
