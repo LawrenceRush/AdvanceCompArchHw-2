@@ -926,7 +926,7 @@ int main() {
         printf("This is the reg3_code: %s\n", reg3_code);
         printf("This is the const_code: %s\n", const_code);
         
-        printf("this is perm %d\n", perm(3, 2));
+        
         
 
         if(find_instruction_type(instruction, instruction_code) == 2){
