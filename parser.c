@@ -10,7 +10,6 @@
 
 int find_reg(char* arg, char* reg_hex){
     int constant;
-    printf("arg value 12 %s\n", arg);
     if(strcmp(arg, "r0") == 0){
    
     strcpy(reg_hex, "1");
@@ -88,8 +87,6 @@ int find_reg(char* arg, char* reg_hex){
 
 int call_instruction(char* instruction, int value1, int value2, int value3){
 
-    //printf("this is instruction: %s %d, %d, %d\n", instruction, value1, value2, value3);
-    //returned value, to be placed in first register listed
     int result;
 
     // if/else ladder for each instruction
@@ -105,7 +102,6 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
     else if(strcmp(instruction, "plusi") == 0){
     
         result = plusi(value2, value3);
-       // printf("instruction was chosen. Result, %d\n", result);
         return result;
 
     }
@@ -128,7 +124,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "minui") == 0){
 
-        result = plusi(value2, value3);
+        result = minui(value2, value3);
 
         return result;
 
@@ -192,7 +188,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "mult4") == 0){
 
-        //result = mult4(value2);
+        result = mult4(value2);
 
         return result;
 
@@ -264,7 +260,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "expn") == 0){
 
-       // result = expn(value2, value3);
+       result = expn(value2, value3);
 
         return result;
 
@@ -278,13 +274,14 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
+    /*
     else if(strcmp(instruction, "prim") == 0){
 
-       // result = prim(value2, value3);
+       result = prim(value2, value3);
 
         return result;
 
-    }
+    }*/
 
     else if(strcmp(instruction, "set") == 0){
 
@@ -350,9 +347,11 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     }
 
-    else if(strcmp(instruction, "clear") == 0){
+     else if(strcmp(instruction, "minat") == 0){
 
-        return 0; // simple enough to perform without a separate function
+        result = minat(value2, value3);
+
+        return result;
 
     }
 
@@ -451,7 +450,6 @@ int find_instruction_type(char* instruction, char* instruction_hex){
     }
 
     else if(strcmp(instruction, "plusi") == 0){
-        //printf("Instruction found\n");
         strcpy(instruction_hex, "02");
         return 2;
         
@@ -668,12 +666,13 @@ int find_instruction_type(char* instruction, char* instruction_hex){
 
     }
 
-    else if(strcmp(instruction, "clear") == 0){
+     else if(strcmp(instruction, "minat") == 0){
         strcpy(instruction_hex, "21");
-        return 3;
+        return 1;
         
 
     }
+
 
     else if(strcmp(instruction, "fact") == 0){
         strcpy(instruction_hex, "22");
@@ -719,14 +718,14 @@ int find_instruction_type(char* instruction, char* instruction_hex){
 
     else if(strcmp(instruction, "perm") == 0){
         strcpy(instruction_hex, "28");
-        return 3;
+        return 1;
         
 
     }
 
     else if(strcmp(instruction, "permi") == 0){
         strcpy(instruction_hex, "29");
-        return 3;
+        return 2;
         
 
     }
@@ -765,10 +764,7 @@ int main() {
     char* reg2_code = (char*) malloc(4 * sizeof(char));
     char* reg3_code = (char*) malloc(4 * sizeof(char));
     char* const_code = (char*) malloc(4 * sizeof(char));
-   /* reg1_code = "0";
-    reg2_code = "0";
-    reg3_code = "0";
-    const_code = "0";*/
+   
 
 
     char reg1_codeforPirnt[1] = "0";
@@ -789,23 +785,7 @@ int main() {
         }
 
      printf("\nPlease enter a command\n");
-        //print current register status before each user input
-
-        /*
-        //input
-        printf("%s\n", inputString);
-        scanf("%s", inputString);
         
-        //if exit command is typed, exit the program
-        if (strcmp(inputString, exitCommand) == 0){
-            exit(0);
-        } 
-
-        //break up input string into smaller strings
-        else{
-           
-        }
-        */
         fgets(buffer, 100, stdin);
 
         sscanf(buffer, "%[^,], %[^,\n], %[^,\n], %[^,\n]", instruction, arg1, arg2, arg3);
@@ -852,9 +832,7 @@ int main() {
             } 
             
             arguments[2] = regArray[value3];
-            //arguments[2] = value3;
             
-         printf("this is the badd guy line 839: %d\n", regArray[0]);
         }
         
     //type 2: 2 registers + 1 constant
@@ -948,6 +926,7 @@ int main() {
         printf("This is the reg3_code: %s\n", reg3_code);
         printf("This is the const_code: %s\n", const_code);
         
+        printf("this is perm %d\n", perm(3, 2));
         
 
         if(find_instruction_type(instruction, instruction_code) == 2){

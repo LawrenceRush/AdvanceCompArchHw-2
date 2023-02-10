@@ -34,7 +34,7 @@ int noteq(int firstReg, int secondReg)
 }
 
 
-int expo(int firstReg, int secondReg)
+int expn(int firstReg, int secondReg)
 {
 
   return pow(firstReg, secondReg);
@@ -51,6 +51,13 @@ int minao(int firstReg, int secondReg)
 {
 
   return firstReg - secondReg + 1;
+
+}
+
+int minat(int firstReg, int secondReg)
+{
+
+  return firstReg - secondReg + 2;
 
 }
 
