@@ -8,69 +8,78 @@
 #define max_length 24
 
 int find_reg(char* arg, char* reg_hex){
-
     int constant;
-
+    printf("arg value 12 %s\n", arg);
     if(strcmp(arg, "r0") == 0){
-
+   
+    strcpy(reg_hex, "1");
+     
         return 0;
-        strcpy(reg_hex, "0");
+        
 
     }
 
     else if(strcmp(arg, "r1") == 0){
+    
+    strcpy(reg_hex,"2");
 
         return 1;
-        strcpy(reg_hex,"2");
-
+        
     }
 
     else if(strcmp(arg, "r2") == 0){
-
+    
+    strcpy(reg_hex, "3");
         return 2;
-        strcpy(reg_hex, "3");
+        
 
     }
 
     else if(strcmp(arg, "r3") == 0){
-
+    
+    strcpy(reg_hex, "4");
         return 3;
-        strcpy(reg_hex, "4");
+        
 
     }
     
     else if(strcmp(arg, "r4") == 0){
-
+    
+    strcpy(reg_hex, "5");
         return 4;
-        strcpy(reg_hex, "5");
+        
 
     }
     
     else if(strcmp(arg, "r5") == 0){
-
+    
+    strcpy(reg_hex, "6");
         return 5;
-        strcpy(reg_hex, "6");
+        
 
     }
     
     else if(strcmp(arg, "r6") == 0){
-
+    
+    strcpy(reg_hex, "7");
         return 6;
-        strcpy(reg_hex, "7");
+        
 
     }
 
     else if(strcmp(arg, "r7") == 0){
-
+    
+    strcpy(reg_hex, "8");
         return 7;
-        strcpy(reg_hex, "8");
+        
 
     }
 
     else{
-
+    
+    strcpy(reg_hex, "0");
         return -1;
-        strcpy(reg_hex, "0");
+        
 
     }
     
@@ -432,291 +441,292 @@ int find_instruction_type(char* instruction, char* instruction_hex){
 
 
     if(strcmp(instruction, "plus") == 0){
-
-        return 1;
         
         strcpy(instruction_hex, "01");
 
+        return 1;
+        
+       
     }
 
     else if(strcmp(instruction, "plusi") == 0){
         //printf("Instruction found\n");
-        return 2;
         strcpy(instruction_hex, "02");
+        return 2;
+        
         
 
     }
 
     else if(strcmp(instruction, "avg") == 0){
-
-        return 1;
         strcpy(instruction_hex, "03");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "minus") == 0){
-
-        return 1;
         strcpy(instruction_hex, "04");
-
+        return 1;
+        
     }
 
     else if(strcmp(instruction, "minui") == 0){
-
-        return 2;
         strcpy(instruction_hex, "05");
+        return 2;
+        
 
     }
 
     else if(strcmp(instruction, "times") == 0){
-
-        return 1;
         strcpy(instruction_hex, "06");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "timei") == 0){
-
+         strcpy(instruction_hex, "07");
         return 2;
-        strcpy(instruction_hex, "07");
+       
 
     }
 
     else if(strcmp(instruction, "divd") == 0){
-
-        return 1;
         strcpy(instruction_hex, "08");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "divi") == 0){
-
-        return 2;
         strcpy(instruction_hex, "09");
+        return 2;
+        
 
     }
 
     else if(strcmp(instruction, "mod") == 0){
-
+         strcpy(instruction_hex, "0A");
         return 1;
-        strcpy(instruction_hex, "0A");
+       
 
     }
 
     else if(strcmp(instruction, "modi") == 0){
-
+         strcpy(instruction_hex, "0B");
         return 2;
-        strcpy(instruction_hex, "0B");
+       
 
     }
 
     else if(strcmp(instruction, "div4") == 0){
-
-        return 5;
         strcpy(instruction_hex, "0C");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "mult4") == 0){
-
-        return 5;
         strcpy(instruction_hex, "0D");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "equal") == 0){
-
+         strcpy(instruction_hex, "0E");
         return 1;
-        strcpy(instruction_hex, "0E");
+       
 
     }
 
     else if(strcmp(instruction, "noteq") == 0){
-
-        return 1;
         strcpy(instruction_hex, "0F");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "less") == 0){
-
-        return 1;
         strcpy(instruction_hex, "10");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "great") == 0){
-
+         strcpy(instruction_hex, "11");
         return 1;
-        strcpy(instruction_hex, "11");
+       
 
     }
 
     else if(strcmp(instruction, "isneg") == 0){
-
-        return 5;
         strcpy(instruction_hex, "12");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "ispos") == 0){
-
-        return 5;
         strcpy(instruction_hex, "13");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "iseve") == 0){
-
+         strcpy(instruction_hex, "14");
         return 5;
-        strcpy(instruction_hex, "14");
+       
 
     }
 
     else if(strcmp(instruction, "isodd") == 0){
-
-        return 5;
         strcpy(instruction_hex, "15");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "expn") == 0){
-
+         strcpy(instruction_hex, "16");
         return 1;
-        strcpy(instruction_hex, "16");
+       
 
     }
 
     else if(strcmp(instruction, "expi") == 0){
-
+         strcpy(instruction_hex, "17");
         return 2;
-        strcpy(instruction_hex, "17");
+       
 
     }
 
     else if(strcmp(instruction, "prim") == 0){
-
+         strcpy(instruction_hex, "18");
         return 1;
-        strcpy(instruction_hex, "18");
-
+       
     }
 
     else if(strcmp(instruction, "set") == 0){
-
-        return 3;
         strcpy(instruction_hex, "19");
+        return 3;
+        
 
     }
 
     else if(strcmp(instruction, "neg") == 0){
-
-        return 5;
         strcpy(instruction_hex, "1A");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "addao") == 0){
+         strcpy(instruction_hex, "1B");
 
         return 1;
-        strcpy(instruction_hex, "1B");
-
+       
     }
 
     else if(strcmp(instruction, "addat") == 0){
-
-        return 1;
+        
         strcpy(instruction_hex, "1C");
 
+        return 1;
+        
     }
 
     else if(strcmp(instruction, "copy") == 0){
-
-        return 5;
         strcpy(instruction_hex, "1D");
 
+        return 5;
+        
     }
 
     else if(strcmp(instruction, "lessi") == 0){
-
-        return 2;
         strcpy(instruction_hex, "1E");
+        return 2;
+        
 
     }
 
     else if(strcmp(instruction, "greti") == 0){
-
-        return 2;
         strcpy(instruction_hex, "1F");
+        return 2;
+        
 
     }
 
     else if(strcmp(instruction, "minao") == 0){
-
-        return 1;
         strcpy(instruction_hex, "20");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "clear") == 0){
-
-        return 3;
         strcpy(instruction_hex, "21");
+        return 3;
+        
 
     }
 
     else if(strcmp(instruction, "fact") == 0){
-
-        return 1;
         strcpy(instruction_hex, "22");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "facti") == 0){
-
-        return 2;
         strcpy(instruction_hex, "23");
+        return 2;
+        
 
     }
 
     else if(strcmp(instruction, "logr") == 0){
-
-        return 1;
         strcpy(instruction_hex, "24");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "nlog") == 0){
-
-        return 1;
         strcpy(instruction_hex, "25");
+        return 1;
+        
 
     }
 
     else if(strcmp(instruction, "fctol") == 0){
-
-        return 5;
         strcpy(instruction_hex, "26");
+        return 5;
+        
 
     }
 
     else if(strcmp(instruction, "fctoi") == 0){
-
-        return 3;
         strcpy(instruction_hex, "27");
+        return 3;
+        
 
     }
 
     else if(strcmp(instruction, "perm") == 0){
-
-        return 3;
         strcpy(instruction_hex, "28");
+        return 3;
+        
 
     }
 
     else if(strcmp(instruction, "permi") == 0){
-
-        return 3;
         strcpy(instruction_hex, "29");
+        return 3;
+        
 
     }
 
@@ -737,10 +747,10 @@ int main() {
     int arguments[2];
     
     char buffer[100];
-    char instruction[6];
-    char arg1[4];
-    char arg2[4];
-    char arg3[4];
+    char* instruction = (char*) malloc(6 * sizeof(char));
+    char* arg1 = (char*) malloc(4 * sizeof(char));
+    char* arg2 = (char*) malloc(4 * sizeof(char));
+    char* arg3 = (char*) malloc(4 * sizeof(char));
 
     int value1;
     int value2;
@@ -749,11 +759,18 @@ int main() {
 
     int type;
 
-    char instruction_code[2];
-    char reg1_code[1];
-    char reg2_code[1];
-    char reg3_code[1];
-    char const_code[8];
+    char* instruction_code = (char*) malloc(4 * sizeof(char));
+    char* reg1_code = (char*) malloc(4 * sizeof(char));
+    char* reg2_code = (char*) malloc(4 * sizeof(char));
+    char* reg3_code = (char*) malloc(4 * sizeof(char));
+    char* const_code = (char*) malloc(4 * sizeof(char));
+   /* reg1_code = "0";
+    reg2_code = "0";
+    reg3_code = "0";
+    const_code = "0";*/
+
+
+    char reg1_codeforPirnt[1] = "0";
 
     //declare input string
     char inputString[max_length];
@@ -789,12 +806,12 @@ int main() {
         }
         */
         fgets(buffer, 100, stdin);
-        sscanf(buffer, "%[^,], %[^,], %[^,], %[^,]", instruction, arg1, arg2, arg3);
+        sscanf(buffer, "%[^,], %[^,\n], %[^,\n], %[^,\n]", instruction, arg1, arg2, arg3);
 
 
         //parse first argument, which must always be a valid register
         value1 = find_reg(arg1, reg1_code);
-
+       
         //printf("this is value 1 %d", value1);
         if (value1 < 0 || value1 >= registerCount){
 
@@ -816,19 +833,18 @@ int main() {
 
             if (value2 < 0 || value2 >= registerCount){
 
-                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                printf("Invalid register for second argument. Available registers range from r0 to r%d.\n", registerCount - 1);
                 continue;
             
             } 
 
             arguments[1] = regArray[value2];
-
             value3 = find_reg(arg3, reg3_code);
 
             
             if (value3 < 0 || value3 >= registerCount){
 
-                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                printf("Invalid register for third. Available registers range from r0 to r%d.\n", registerCount - 1);
                 continue;
             
             } 
@@ -861,13 +877,12 @@ int main() {
              sscanf(arg3, "%d", &constant);
             //arguments[2] = atoi(arg3);
              
-            sprintf(const_code, "%x", arguments[2]);
-       
+            sprintf(const_code, "%x", constant);
         }
 
         
     //type 3: 1 register + 1 constant
-    /*
+    
         else if(find_instruction_type(instruction, instruction_code) == 3){
 
             arguments[0] = regArray[value1];
@@ -878,6 +893,9 @@ int main() {
 
             arguments[2] = 0;//should not be used in this case
         }
+
+    
+   /*
     //type 4: 1 register + 2 constants
 
         else if(find_instruction_type(instruction, instruction_code) == 4){
@@ -889,6 +907,7 @@ int main() {
             arguments[2] = atoi(arg3);
 
         }
+    */
     //type 5: 1 register + 1 register
 
         else if(find_instruction_type(instruction, instruction_code) == 5){
@@ -896,10 +915,11 @@ int main() {
             arguments[0] = regArray[value1];
 
             value2 = find_reg(arg2, reg2_code);
-
+             printf("arg2 914: %s \n", arg2);
+            printf("Value 914: %d \n", value2);
             if (value2 < 0 || value2 >= registerCount){
 
-                printf("Invalid register. Available registers range from r0 to r%d.\n", registerCount - 1);
+                printf("Invalid second register for type 5. Available registers range from r0 to r%d.\n", registerCount - 1);
                 continue;
             
             } 
@@ -909,7 +929,7 @@ int main() {
             arguments[2] = 0;//should not be used in this case
 
         }
-    */
+    
     //unknown
         else{
 
@@ -919,16 +939,14 @@ int main() {
         }
         
         //print hex instruction code
-        /*
-        puts(instruction_code);
-        puts(reg1_code);
-        puts(reg2_code);
-        puts(reg3_code);
-        puts(const_code);
-        */
-
-        printf("this is value 1: %d\n", value1);
-        printf("this is the badd guy 932: %d", regArray[0]);
+        
+        printf("This is the instruction code: %s\n", instruction_code);
+        printf("This is the reg1_code: %s\n", reg1_code);
+        printf("This is the reg2_code: %s\n", reg2_code);
+        printf("This is the reg3_code: %s\n", reg3_code);
+        printf("This is the const_code: %s\n", const_code);
+        
+        
 
         if(find_instruction_type(instruction, instruction_code) == 2){
             regArray[value1] = call_instruction(instruction, arguments[0], arguments[1], constant);
