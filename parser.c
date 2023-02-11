@@ -777,6 +777,10 @@ int main() {
    
     
     while(1){
+        strcpy(reg2_code, "0");
+        strcpy(reg3_code, "0");
+        strcpy(const_code, "0");
+   
 
      printf("Current value of registers:\n");
         for (int i = 0; i < registerCount; i++){
@@ -832,7 +836,7 @@ int main() {
             } 
             
             arguments[2] = regArray[value3];
-            
+            //const_code = "0";
         }
         
     //type 2: 2 registers + 1 constant
@@ -858,6 +862,8 @@ int main() {
             //arguments[2] = atoi(arg3);
              
             sprintf(const_code, "%x", constant);
+            //reg3_code = "0";
+
         }
 
         
@@ -873,6 +879,10 @@ int main() {
 			sprintf(reg2_code, "%x", arguments[2]);
 			sprintf(reg3_code, "%x", arguments[3]);
             arguments[2] = 0;//should not be used in this case
+            //reg2_code = "0";
+            //reg3_code = "0";
+
+
         }
 
     
@@ -896,8 +906,7 @@ int main() {
             arguments[0] = regArray[value1];
 
             value2 = find_reg(arg2, reg2_code);
-          //   printf("arg2 914: %s \n", arg2);
-        //    printf("Value 914: %d \n", value2);
+
             if (value2 < 0 || value2 >= registerCount){
 
                 printf("Invalid second register for type 5. Available registers range from r0 to r%d.\n", registerCount - 1);
@@ -910,6 +919,11 @@ int main() {
             arguments[1] = regArray[value2];
 
             arguments[2] = 0;//should not be used in this case
+           // reg2_code = "0";
+            //reg3_code = "0";
+           // const_code = "0";
+
+
 
         }
     
@@ -923,17 +937,11 @@ int main() {
         
         //print hex instruction code
         
-    //    printf("This is the instruction code: %s\n", instruction_code);
-   //     printf("This is the reg1_code: %s\n", reg1_code);
-   //     printf("This is the reg2_code: %s\n", reg2_code);
-   //     printf("This is the reg3_code: %s\n", reg3_code);
-    //    printf("This is the const_code: %s\n", const_code);
+
         
-      printf("%-20s | %-10s | %-10s | %-10s | %-10s\n", "Instruction Code", "Reg1 Code", "Reg2 Code", "Reg3 Code", "Const Code");
+         printf("%-20s | %-10s | %-10s | %-10s | %-10s\n", "Instruction Code", "Reg1 Code", "Reg2 Code", "Reg3 Code", "Const Code");
     printf("--------------------------------------------------------------------------------------------------------------\n");
     printf("%-20s | %-10s | %-10s | %-10s | %-10s\n", instruction_code, reg1_code, reg2_code, reg3_code, const_code);
-        
-
         if(find_instruction_type(instruction, instruction_code) == 2){
             regArray[value1] = call_instruction(instruction, arguments[0], arguments[1], constant);
             constant = 0;
@@ -941,7 +949,9 @@ int main() {
             regArray[value1] = call_instruction(instruction, arguments[0], arguments[1], arguments[2]);
 
         }
+       
         
+           
    
     }
 
