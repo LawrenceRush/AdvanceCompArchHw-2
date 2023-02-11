@@ -847,7 +847,7 @@ int main() {
             } 
             
             arguments[2] = regArray[value3];
-            //const_code = "0";
+            strcpy(const_code, "0");
         }
         
     //type 2: 2 registers + 1 constant
@@ -873,7 +873,7 @@ int main() {
             //arguments[2] = atoi(arg3);
              
             sprintf(const_code, "%x", constant);
-            //reg3_code = "0";
+            strcpy(reg3_code, "0");
 
         }
 
@@ -890,8 +890,8 @@ int main() {
 			sprintf(reg2_code, "%x", arguments[2]);
 			sprintf(reg3_code, "%x", arguments[3]);
             arguments[2] = 0;//should not be used in this case
-            //reg2_code = "0";
-            //reg3_code = "0";
+            strcpy(reg2_code, "0");
+            strcpy(reg3_code, "0");
 
 
         }
@@ -930,9 +930,8 @@ int main() {
             arguments[1] = regArray[value2];
 
             arguments[2] = 0;//should not be used in this case
-           // reg2_code = "0";
-            //reg3_code = "0";
-           // const_code = "0";
+           strcpy(reg3_code, "0");
+           strcpy(const_code, "0");
 
 
 
