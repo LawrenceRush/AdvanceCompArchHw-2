@@ -799,7 +799,10 @@ int main() {
      printf("\nPlease enter a command\n");
         
         fgets(buffer, 100, stdin);
-
+        if(strncmp(buffer, "exit", 4) == 0){
+            exit(0);
+        }
+        
         sscanf(buffer, "%[^,], %[^,\n], %[^,\n], %[^,\n]", instruction, arg1, arg2, arg3);
 
 
