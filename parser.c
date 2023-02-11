@@ -802,7 +802,7 @@ int main() {
         if(strncmp(buffer, "exit", 4) == 0){
             exit(0);
         }
-        
+
         sscanf(buffer, "%[^,], %[^,\n], %[^,\n], %[^,\n]", instruction, arg1, arg2, arg3);
 
 
@@ -925,7 +925,7 @@ int main() {
             
             } 
 			sprintf(const_code, "%x", arguments[1]);
-			sprintf(reg2_code, "%x", arguments[2]);
+			//sprintf(reg2_code, "%x", arguments[2]);
 			sprintf(reg3_code, "%x", arguments[3]);
             arguments[1] = regArray[value2];
 
