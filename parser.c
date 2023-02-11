@@ -904,7 +904,9 @@ int main() {
                 continue;
             
             } 
-
+			sprintf(const_code, "%x", arguments[1]);
+			sprintf(reg2_code, "%x", arguments[2]);
+			sprintf(reg3_code, "%x", arguments[3]);
             arguments[1] = regArray[value2];
 
             arguments[2] = 0;//should not be used in this case
