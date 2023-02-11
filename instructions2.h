@@ -1,6 +1,6 @@
 // instructions for log10, loge, factorial integer, factorial register , isodd , iseven,ispositive, isnegative,great (return 1 if value1>value2 , less (return 1 if value1< value2)
 //#include <stdio.h>
-//#include <math.h>
+#include <math.h>
 int logr(int y,int x) {
     int result = 0;
     while (x >= 10) {
@@ -35,7 +35,7 @@ int fctol(int reg){
 	for (int i = 2; i <= reg; i++) {
         result *= i;
     }
-    return result;
+	    return result;
 }
 int isodd(int n) {
     if (n % 2) {
