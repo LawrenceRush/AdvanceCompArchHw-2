@@ -743,7 +743,15 @@ int main() {
 
     //declare array for registers
     int registerCount = 8;
-    int regArray[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+      int* regArray = (int*) malloc(8 * sizeof(int));
+    regArray[0] = 0;
+    regArray[1] = 0;
+    regArray[2] = 0;
+    regArray[3] = 0;
+    regArray[4] = 0;
+    regArray[5] = 0;
+    regArray[6] = 0;
+    regArray[7] = 0;
     int arguments[2];
     
     char buffer[100];
