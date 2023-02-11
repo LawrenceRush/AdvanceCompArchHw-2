@@ -372,7 +372,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "logr") == 0){
 
-        result = logr(value2, value3);
+        result = logr(value2);
 
         return result;
 
@@ -380,7 +380,7 @@ int call_instruction(char* instruction, int value1, int value2, int value3){
 
     else if(strcmp(instruction, "nlog") == 0){
 
-        result = nlog(value2, value3);
+        result = nlog(value2);
 
         return result;
 
